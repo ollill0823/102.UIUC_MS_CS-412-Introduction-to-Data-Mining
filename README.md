@@ -22,7 +22,6 @@ We aim to delve into baseball games, assessing the likelihood of our favored pla
 1. Eliminate Missing Values: Upon reviewing the dataset, it came to our attention that certain features contain missing values. Further examination revealed that the feature with the highest number of missing values amounts to approximately 500 out of 226,000 data points. Consequently, we have chosen to remove these instances from the dataset.
 2.	Enhance Feature Representation: The existing "Pitch_type" feature encompasses 
 various pitching postures, yet they are currently consolidated under a single feature. Recognizing the significance of pitch type for pitchers and individual pitches, we have opted to broaden this representation by transforming the singular "Pitch_type" feature into multiple categorical features. Leveraging label encoding, we expand and organize the distinct pitch types based on their individual names.
-
 ![Figure 1](https://github.com/ollill0823/102.UIUC_MS_CS-412-Introduction-to-Data-Mining/blob/main/Pictures/Figure1.png)
 
 4.	Enhance Feature Representation: The existing "Pitch_type" feature encompasses 
