@@ -4,7 +4,7 @@
 
 
 
-### CSV file:
+### Data file:
 - [2023 MLB pitching raw data](https://github.com/ollill0823/102.UIUC_MS_CS-412-Introduction-to-Data-Mining/tree/main/Report) Raw data from [Baseball Savant](https://baseballsavant.mlb.com/statcast_search)
 
 
