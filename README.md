@@ -61,4 +61,4 @@ From the preceding discussion, it becomes evident that the available datasets fo
 
 
 ### References:
-- [A Method of Analyzing a Baseball Pitcher's Performance Based on Statistical Data Mining]([https://michaelturton.blogspot.com/2008/02/gerrymandering.html](https://www.researchgate.net/publication/283722473_A_Method_of_Analyzing_a_Baseball_Pitcher's_Performance_Based_on_Statistical_Data_Mining)) Ezra Sidran
+- [A Method of Analyzing a Baseball Pitcher's Performance Based on Statistical Data Mining](https://www.researchgate.net/publication/283722473_A_Method_of_Analyzing_a_Baseball_Pitcher's_Performance_Based_on_Statistical_Data_Mining) Ezra Sidran
