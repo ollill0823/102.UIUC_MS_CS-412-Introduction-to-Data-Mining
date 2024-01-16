@@ -1,4 +1,4 @@
-# Analyzing the pitcher performance through years
+# Final project: Analyzing the pitcher performance through years
 
 ## This file includes:
 
