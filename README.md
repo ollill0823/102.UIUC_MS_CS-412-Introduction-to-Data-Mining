@@ -1,4 +1,4 @@
-# 102.UIUC_MS_CS-412-Introduction-to-Data-Mining
+# Analyzing the pitcher performance through years
 
 ## This file includes:
 
