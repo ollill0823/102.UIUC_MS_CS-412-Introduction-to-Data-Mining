@@ -19,35 +19,41 @@ We aim to delve into baseball games, assessing the likelihood of our favored pla
 
 ### Empirical results:
 #### Data Preprocessing: 
-1. **Eliminate Missing Values:** Upon reviewing the dataset, it came to our attention that certain features contain missing values. Further examination revealed that the feature with the highest number of missing values amounts to approximately 500 out of 226,000 data points. Consequently, we have chosen to remove these instances from the dataset.
-2.	**Enhance Feature Representation:** The existing "Pitch_type" feature encompasses 
-various pitching postures, yet they are currently consolidated under a single feature. Recognizing the significance of pitch type for pitchers and individual pitches, we have opted to broaden this representation by transforming the singular "Pitch_type" feature into multiple categorical features. Leveraging label encoding, we expand and organize the distinct pitch types based on their individual names.
+  **1. Eliminate Missing Values:**
+
+   Upon reviewing the dataset, it came to our attention that certain features contain missing values. Further examination revealed that the feature with the highest number of missing values amounts to approximately 500 out of 226,000 data points. Consequently, we have chosen to remove these instances from the dataset.
+**2.	Enhance Feature Representation:**
+
+  	The existing "Pitch_type" feature encompasses various pitching postures, yet they are currently consolidated under a single feature. Recognizing the significance of pitch type for pitchers and individual pitches, we have opted to broaden this representation by transforming the singular "Pitch_type" feature into multiple categorical features. Leveraging label encoding, we expand and organize the distinct pitch types based on their individual names.
 
 ![Figure 1](https://github.com/ollill0823/102.UIUC_MS_CS-412-Introduction-to-Data-Mining/blob/main/Pictures/Figure1.png)
 
-4.	Enhance Feature Representation: The existing "Pitch_type" feature encompasses 
-various pitching postures, yet they are currently consolidated under a single feature. Recognizing the significance of pitch type for pitchers and individual pitches, we have opted to broaden this representation by transforming the singular "Pitch_type" feature into multiple categorical features. Leveraging label encoding, we expand and organize the distinct pitch types based on their individual names.
+**3.	Enhance Feature Representation:**
+  
+   The existing "Pitch_type" feature encompasses various pitching postures, yet they are currently consolidated under a single feature. Recognizing the significance of pitch type for pitchers and individual pitches, we have opted to broaden this representation by transforming the singular "Pitch_type" feature into multiple categorical features. Leveraging label encoding, we expand and organize the distinct pitch types based on their individual names.
 
 ![Figure 2](https://github.com/ollill0823/102.UIUC_MS_CS-412-Introduction-to-Data-Mining/blob/main/Pictures/Figure2.png)
 
-6.	Aggregate and Derive Predictive Features:
+**4.	Aggregate and Derive Predictive Features:**
+   
    *	In the pursuit of generating a comprehensive predictive model, we undertake the grouping and calculation of diverse features. Features that encapsulate the pitcher's overall performance in each game, such as "spin_rate" and "release_speed", are subject to a mean calculation. This involves averaging the data across individual games for each respective feature.
    *	In the case of features like "post_away_score" and "post_home_score," which directly influence the final points of each game, we seek the maximum value for these attributes. This maximal value indicates the final score that two teams achieve in each game, and it is pivotal in computing the point differential between the two teams. The resulting differentials serve as crucial inputs for the final prediction, enhancing our ability to gauge and anticipate outcomes based on game dynamics.
    *	In assessing the "reward" feature, we aim to aggregate the points a pitcher accrues based on the reward table. Summing up these points provides an overall measure of the pitcher's performance. A higher total indicates superior pitching qualities, offering a quantitative representation of the pitcher's effectiveness.
-5.	Define Target Variable (y):
+**5.	Define Target Variable (y):**
+
 Our target variable is the score difference in each game, reflecting the outcome of the match. Building upon the results obtained during the aforementioned data preprocessing, we integrate information about the team the pitcher is representing and the features "post_away_score" and "post_home_score" to compute the points gained or lost by each pitcher in a game. For pitchers aligned with the home team, the calculation involves subtracting "post_away_score" from "post_home_score." Conversely, for pitchers associated with the away team, the calculation becomes "post_away_score" minus "post_home_score." Utilizing the derived results, we categorize a winning scenario as "1" and a losing scenario as "0." This categorization forms the basis of our target variable for further analysis.
 6.	Implement Random Data Split for Training and Testing: To establish distinct training and testing datasets, we employ a random split method. Given the potential involvement of multiple pitchers in a single game, our dataset comprises a total of 2578 records for various games. In the case of the "score difference" method, we utilize the game-level data for the training and testing processes. Conversely, for the "reward" method, we employ data at the granularity of each ball for the training and testing procedures. This involves allocating 90% of the randomized datasets for training purposes, with the remaining 10% designated for testing. To avoid potential errors during the data split, we exclude grouping parameters such as "game_date" and "pitcher." Furthermore, we categorize the datasets into two types: one dedicated to predicting score differences and the other focused on predicting reward system outcomes. This segregation allows for targeted analysis and model training based on the specific prediction goals, enhancing the precision of our predictive models.
 
 #### Regression analysis: 
 We use several regression models to predict the results. The models we chose are:
-   -	Linear Regression
-   -	LASSO Regression
-   -	SVR
-   -	Random Forest Regressor
-   -	KNN Regressor
-   -	MLP Regressor (neural network)
-   -	Decision Tree Regressor
-   -	Gradient Boosting Regressor
+   -	**Linear Regression**
+   -	**LASSO Regression**
+   -	**SVR**
+   -	**Random Forest Regressor**
+   -	**KNN Regressor**
+   -	**MLP Regressor (neural network)**
+   -	**Decision Tree Regressor**
+   -	**Gradient Boosting Regressor**
 
 We utilized GridSearchCV to fine-tune our hyperparameters, systematically exploring all possible combinations specified in a dictionary. This process evaluates the model's performance for each combination through Cross-Validation, providing accuracy or loss metrics. Consequently, employing this function enables us to pinpoint the hyperparameter configuration that exhibits optimal performance. In the context of the "reward" system, the Linear Regression model demonstrated superior performance, as evidenced by the smallest Mean Square Error among the models considered. Conversely, in the realm of the "score difference” system method, the MLP Regressor (neural network) emerged as the top performer, showcasing the smallest Mean Square Error in comparison to other models.
 
